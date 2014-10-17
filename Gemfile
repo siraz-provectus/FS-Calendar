@@ -33,6 +33,14 @@ gem "bootstrap-sass", ">= 3.0.0.0"
 gem "decent_exposure", "~>2.3.0"
 gem 'fullcalendar-rails'
 
+gem 'thin'
+gem 'draper'
+
+group :development, :test do
+  gem 'quiet_assets'
+  gem 'pry-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

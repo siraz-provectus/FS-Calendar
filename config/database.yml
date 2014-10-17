@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: calendar_development
+  database: fscalendar_development
   pool: 5
   username: glowfori
   password: glowforipass
@@ -12,7 +12,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: calendar_test
+  database: fscalendar_test
   pool: 5
   username: glowfori
   password: glowforipass

@@ -2,11 +2,25 @@
   ul.nav.nav-pills.pull-right
     li.active
       = link_to 'Home', root_url
-    li
-      = link_to "Login",
-        "#"
-    li  
-      = link_to "Sign Up",
-        "#"
+    - if user_signed_in?
+      li.dropdown
+        a.dropdown-toggle data-toggle="dropdown" href="#"
+          = current_user.decorate.full_name
+          b.caret
+        ul.dropdown-menu role="menu"
+          li
+            = link_to "Settings", 
+              "#"
+          li
+            = link_to 'Logout',
+              destroy_user_session_path,
+              method: :delete 
+    - else
+      li
+        = link_to "Login",
+          new_user_session_path
+      li  
+        = link_to "Sign Up",
+          new_user_registration_path
   h3.text-muted.app_title
     = link_to 'FSCalendar', root_url
