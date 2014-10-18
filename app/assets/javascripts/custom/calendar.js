@@ -69,7 +69,8 @@ var FlCalendar = window.FlCalendar = {
                               id: element['id'],
                               title: element['name'],
                               start: start_temp,
-                              end: new Date(end_temp)
+                              end: new Date(end_temp),
+                              allDay: false
                             });
                           } else if (element['repeat'] == 2) {
                             day = date.getDay();
@@ -78,7 +79,8 @@ var FlCalendar = window.FlCalendar = {
                                 id: element['id'],
                                 title: element['name'],
                                 start: start_temp,
-                                end: new Date(end_temp)
+                                end: new Date(end_temp),
+                                allDay: false
                               });
                             }
                           } else if (element['repeat'] == 3) {
@@ -88,7 +90,8 @@ var FlCalendar = window.FlCalendar = {
                                 id: element['id'],
                                 title: element['name'],
                                 start: start_temp,
-                                end: new Date(end_temp)
+                                end: new Date(end_temp),
+                                allDay: false
                               });
                             }
                           } 
@@ -103,7 +106,8 @@ var FlCalendar = window.FlCalendar = {
                                 id: element['id'],
                                 title: element['name'],
                                 start: start_temp,
-                                end: new Date(end_temp)
+                                end: new Date(end_temp),
+                                allDay: false
                               });
                             }
                           }
@@ -114,13 +118,18 @@ var FlCalendar = window.FlCalendar = {
                         id: element['id'],
                         title: element['name'],
                         start: new Date(date),
-                        end: new Date(end_date)
+                        end: new Date(end_date),
+                        allDay: false
                       });
                     }
                   });
                   callback(events);
               }
           });
+      },
+
+      changeView: function() {
+        console.log('tutochki');
       },
 
       dayClick: function(date, allDay, jsEvent, view) {

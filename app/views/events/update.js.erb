@@ -3,6 +3,10 @@
 <% else %>
   $('#newEvent').modal('hide');
   $('#notice').html("<%= escape_javascript(render('layout_components/flash_messages')) %>");
+  viewName = $('#calendar').fullCalendar('getView').name
+  date = $('#calendar').fullCalendar( 'getDate' )
   $('#calendar').replaceWith("<%= escape_javascript(render('empty_calendar')) %>");
   FlCalendar.initialize();
+  $('#calendar').fullCalendar( 'changeView', viewName )
+  $('#calendar').fullCalendar( 'gotoDate', date )
 <% end %>

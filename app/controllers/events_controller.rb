@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	expose (:events) {
     Event.only_my(event_params[:user_id]) 
   }
-
+  
 	def index
 		render json: events
 	end
