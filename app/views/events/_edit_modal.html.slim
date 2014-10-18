@@ -1,0 +1,12 @@
+.modal-dialog.modal-lg
+  .modal-content
+    .modal-header
+      h2
+        | Edit Event
+    .modal-body
+      .row
+        .col-md-2
+        .col-md-8
+          = render 'form', form_edit: true 
+
+          = link_to 'Back', root_path 

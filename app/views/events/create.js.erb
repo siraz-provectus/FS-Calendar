@@ -1,0 +1,8 @@
+<% if @event.errors.present? %>
+  $('#newEvent').html("<%= escape_javascript(render('new_modal')) %>");
+<% else %>
+  $('#newEvent').modal('hide');
+  $('#notice').html("<%= escape_javascript(render('layout_components/flash_messages')) %>");
+  $('#calendar').replaceWith("<%= escape_javascript(render('empty_calendar')) %>");
+  FlCalendar.initialize();
+<% end %>
