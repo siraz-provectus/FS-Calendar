@@ -1,0 +1,16 @@
+= simple_form_for user,
+                  url: users_setting_path(user),
+                  method: :put do |f|
+  - if f.object.errors.any?
+    .alert.alert-danger
+      - f.object.errors.full_messages.each do |error|
+        p
+          = error
+  = f.error_notification
+  .form-inputs
+    = f.input :first_name, required: true, autofocus: true, input_html: { class: 'form-control' }
+    = f.input :last_name, required: false, input_html: { class: 'form-control' }
+    = f.input :email, required: true, input_html: { class: 'form-control' }
+    br
+  .form-actions
+    = f.button :submit, "Update", class: 'btn btn-primary btn-lg'

@@ -1,0 +1,13 @@
+.col-md-2
+  = hidden_field_tag 'user_id', params[:show_all] == 'false' ? current_user.id : nil
+  ' Display
+  - if params[:show_all] == 'false'
+    = link_to "All", root_path(show_all: true)
+  - else
+    = link_to "Only #{current_user.decorate.full_name}", root_path(show_all: false)
+  .create_new
+    = link_to ' Create new event', new_event_path, class: "btn btn-primary"
+.col-md-8.text-center
+  #calendar
+
+.modal.fade#newEvent
