@@ -43,6 +43,14 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+	gem 'database_cleaner'
+  gem 'capybara'
+  gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'capybara-webkit'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
