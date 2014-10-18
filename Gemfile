@@ -36,6 +36,8 @@ gem 'fullcalendar-rails'
 gem 'thin'
 gem 'draper'
 
+gem 'active_model_serializers'
+
 group :development, :test do
   gem 'quiet_assets'
   gem 'pry-rails'

@@ -8,7 +8,8 @@ html
   body
     = render 'layout_components/header'
     .container
-      = render 'layout_components/flash_messages'
+      #notice
+        = render 'layout_components/flash_messages'
       = render 'layout_components/header_message'
       = yield
       .footer
