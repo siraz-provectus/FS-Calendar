@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   root to: 'home#index'
 
-  resources :events
-  namespace :users, only: [:edit, :update] do
-    resources :settings
+  resources :events, except: [:show, :destroy]
+  namespace :users  do
+    resources :settings, only: [:edit, :update]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

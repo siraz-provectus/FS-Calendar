@@ -2,7 +2,7 @@ module EventHelper
   def not_repeat
     0
   end
-  
+
   def repeat_day
     1
   end

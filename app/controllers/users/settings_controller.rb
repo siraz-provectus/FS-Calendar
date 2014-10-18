@@ -11,14 +11,14 @@ class Users::SettingsController < Users::ProfileController
     current_user.update(user_params)
 
     if !current_user.errors.present?
-      redirect_to edit_users_setting_path(current_user), notice: 'Settings updated' 
+      redirect_to edit_users_setting_path(current_user), notice: 'Settings updated'
     else
-      render "edit" 
+      render "edit"
     end
   end
 
   private
-  def user_params    
+  def user_params
     params.require(:user).permit(:first_name, :last_name, :email)
   end
 end

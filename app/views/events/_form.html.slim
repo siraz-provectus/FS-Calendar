@@ -1,15 +1,15 @@
-= simple_form_for @event, remote: true do |f|
+= simple_form_for event, remote: true do |f|
 
   .form-inputs
-    = f.input :name, 
-              required: true,  
+    = f.input :name,
+              required: true,
               input_html: { class: 'form-control' }
-    = f.input :start_date, 
-              required: true,  
-              input_html: { class: 'form-control' } 
+    = f.input :start_date,
+              required: true,
+              input_html: { class: 'form-control' }
 
-    = f.input :end_date, 
-              required: true,  
+    = f.input :end_date,
+              required: true,
               input_html: { class: 'form-control end_date' }
 
     .clearfix
@@ -17,33 +17,33 @@
     .access
       = label_tag  "Access:"
       .controls
-        = radio_button_tag 'event[user_id]', current_user.id, 
-              @event.user_id != 0 ? true : false
+        = radio_button_tag 'event[user_id]', current_user.id,
+              event.user_id != 0 ? true : false
         = label_tag current_user.decorate.full_name
         = radio_button_tag 'event[user_id]', nil,
-              @event.user_id == 0 ? true : false
+              event.user_id == 0 ? true : false
         = label_tag 'All Users'
 
     .repeat
       = label_tag  "Repeat:"
       .controls
-        = radio_button_tag 'event[repeat]', not_repeat, 
-                @event.repeat == 0 ? true : false
+        = radio_button_tag 'event[repeat]', not_repeat,
+                event.repeat == 0 ? true : false
         = f.label :not_repeat, 'Not Repeat'
-        = radio_button_tag 'event[repeat]', repeat_day, 
-                @event.repeat == 1 ? true : false
+        = radio_button_tag 'event[repeat]', repeat_day,
+                event.repeat == 1 ? true : false
         = f.label :repeat_day, 'Every day'
-        = radio_button_tag 'event[repeat]', repeat_week, 
-                @event.repeat == 2 ? true : false
+        = radio_button_tag 'event[repeat]', repeat_week,
+                event.repeat == 2 ? true : false
         = f.label :repeat_week, 'Every week'
-        = radio_button_tag 'event[repeat]', repeat_month, 
-                @event.repeat == 3 ? true : false
+        = radio_button_tag 'event[repeat]', repeat_month,
+                event.repeat == 3 ? true : false
         = f.label :repeat_month, 'Every month'
-        = radio_button_tag 'event[repeat]', repeat_year, 
-                @event.repeat == 4 ? true : false
+        = radio_button_tag 'event[repeat]', repeat_year,
+                event.repeat == 4 ? true : false
         = f.label :repeat_year, 'Every year'
-   
+
   .form-actions
-    = f.button :submit, 
-               form_edit ? "Update Event" : "Create Event", 
+    = f.button :submit,
+               form_edit ? "Update Event" : "Create Event",
                class: 'btn btn-primary btn-lg create_event'

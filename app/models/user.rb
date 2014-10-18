@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :first_name, 
-            presence: true, 
+  validates :first_name,
+            presence: true,
             length: { maximum: 30 }
 
-  validates :terms_of_service, 
+  validates :terms_of_service,
             acceptance: true
 end

@@ -1,7 +1,6 @@
 class Event < ActiveRecord::Base
-
-	validates :name, 
-            presence: true, 
+	validates :name,
+            presence: true,
             length: { maximum: 30 }
   validates :start_date, :end_date, presence: true
   validates :repeat, inclusion: { in: 0..4 }
