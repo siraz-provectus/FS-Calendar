@@ -1,21 +1,6 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: fscalendar_development
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: glowfori
-  password: glowforipass
-  port: 5432
-  host: localhost
-  min_messages: WARNING
-
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: fscalendar_test
-  pool: 5
-  username: glowfori
-  password: glowforipass
-  port: 5432
-  host: localhost
-  min_messages: WARNING

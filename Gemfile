@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby "2.1.3"
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -50,6 +51,8 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'capybara-webkit'
 end
+
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
