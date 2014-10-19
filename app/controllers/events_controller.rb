@@ -24,6 +24,10 @@ class EventsController < ApplicationController
     flash[:notice] = "Event update success!" if @event.update(event_params)
   end
 
+  def default_serializer_options   
+    {root: false}    
+  end
+
   private
   def event_params
     params.require(:event).permit(:name, :start_date, :end_date, :repeat, :user_id)
