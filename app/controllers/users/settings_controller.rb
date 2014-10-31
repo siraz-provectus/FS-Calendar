@@ -5,6 +5,10 @@ class Users::SettingsController < Users::ProfileController
   before_filter :require_to_be_owner!
 
   def edit
+    @result = request.location.data
+    puts '======================'
+    puts @result.inspect
+    puts '----------------------'
   end
 
   def update

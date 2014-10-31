@@ -38,6 +38,7 @@ gem 'thin'
 gem 'draper'
 
 gem 'active_model_serializers'
+gem 'geocoder'
 
 group :development, :test do
   gem 'quiet_assets'
